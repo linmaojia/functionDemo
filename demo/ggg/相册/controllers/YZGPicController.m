@@ -12,7 +12,7 @@
 #import "TZImagePickerController.h"
  #import "YZGPublishController.h"
 #import "YZGRootNavigationController.h"
-@interface YZGPicController ()<TZImagePickerControllerDelegate>
+@interface YZGPicController ()<TZImagePickerControllerDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (nonatomic, strong) YZGPicManager *manager;
 @property (nonatomic, strong) UIImageView *titleImg;         /**<  图片 */
 
@@ -33,7 +33,6 @@
     }
     return _titleImg;
 }
-
 
 - (YZGPicManager *)manager {
     if (!_manager) {
@@ -85,19 +84,55 @@
 #pragma mark ************** 个人背景被点击
 -(void)titleImgClick:(UITapGestureRecognizer *)sender
 {
-    [CustomAlertView showAlertViewWithTitleArray:@[@"拍照",@"从手机相册选择"] TitleBtnBlock:^(NSString *title) {
-        if([title isEqualToString:@"拍照"])
+    ESWeakSelf;
+    [CustomAlertView showAlertViewWithTitleArray:@[@"原始拍照",@"原始相册",@"第三方相册选择"] TitleBtnBlock:^(NSString *title) {
+        if([title isEqualToString:@"原始拍照"])
         {
             NSLog(@"拍照");
+            [__weakSelf creatPhotoPickerViewWithIndex:0];
         }
-        else if([title isEqualToString:@"从手机相册选择"])
+        else if([title isEqualToString:@"原始相册"])
+        {
+            NSLog(@"从手机相册选择");
+               [__weakSelf creatPhotoPickerViewWithIndex:1];
+        }
+        else if([title isEqualToString:@"第三方相册选择"])
         {
             NSLog(@"从手机相册选择");
             [self openPhotoAlbum];
         }
     }];
 }
-#pragma mark ************** 打开手机相册
+- (void)creatPhotoPickerViewWithIndex:(NSInteger)index {
+    
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    if (index == 0)   //拍照
+    {
+        imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        
+    }
+    else             // 调用系统相机
+    {
+        imagePicker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+    }
+    imagePicker.delegate = self;
+    imagePicker.allowsEditing = YES;  //允许编辑
+    [self presentViewController:imagePicker animated:YES completion:nil];
+}
+#pragma mark ************** UIImagePickerController 代理方法
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    
+    UIImage *selectImage = [info objectForKey:UIImagePickerControllerEditedImage];
+    
+    ESWeakSelf;
+    [picker dismissViewControllerAnimated:YES completion:^{
+        
+         __weakSelf.titleImg.image = selectImage;
+     }];
+   
+}
+
+#pragma mark ************** 打开第三方手机相册
 - (void)openPhotoAlbum
 {
 

@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "YZGPicController.h"
 #import "KViewController.h"
+#import "YZGDataController.h"
 @interface ViewController ()
 {
     NSMutableArray *buttonArray;    /**< 按钮数组 */
@@ -21,7 +22,6 @@
 
 @implementation ViewController
 
-
 - (UIView *)bottomView{
     
     if(!_bottomView){
@@ -29,7 +29,7 @@
         buttonArray = [NSMutableArray new];//使用数组约束
         _bottomView = [[UIView alloc]init];
         _bottomView.backgroundColor = [UIColor whiteColor];
-        NSArray *array = [NSArray arrayWithObjects:@"相册",@"订单列表",@"收货地址管理",@"收藏页面",@"物流地址管理",@"支付成功",@"退款详情",@"订单列表按钮",@"我的收藏" ,@"商品详情",nil];
+        NSArray *array = [NSArray arrayWithObjects:@"相册",@"归档,NSUserDefaults",@"收货地址管理",@"收藏页面",@"物流地址管理",@"支付成功",@"退款详情",@"订单列表按钮",@"我的收藏" ,@"商品详情",nil];
         for(int i=0;i<array.count;i++){
             
             UIButton *button=[UIButton buttonWithType:UIButtonTypeSystem];
@@ -107,6 +107,11 @@
             
         }
             break;
+        case 101:{
+            [self.navigationController pushViewController:[YZGDataController new] animated:YES];
+            
+        }
+            break;
       
      
         default:
@@ -126,7 +131,7 @@
     
     [_bottomView makeConstraints:^(MASConstraintMaker *make) {
         
-        make.width.equalTo(@100);
+        make.width.equalTo(@120);
         make.top.bottom.equalTo(self.view);
     }];
     
@@ -135,7 +140,7 @@
     [buttonArray mas_distributeViewsAlongAxis:MASAxisTypeVertical withFixedSpacing:5 leadSpacing:5 tailSpacing:5];
     [buttonArray makeConstraints:^(MASConstraintMaker *make) {
         
-        make.width.equalTo(@100);
+        make.width.equalTo(@120);
         make.left.equalTo(self.bottomView);
     }];
     
@@ -146,7 +151,7 @@
     
     [_bottomView1 makeConstraints:^(MASConstraintMaker *make) {
         
-        make.width.equalTo(@100);
+        make.width.equalTo(@120);
         make.left.equalTo(_bottomView.right).offset(20);
         make.top.bottom.equalTo(self.view);
     }];
@@ -156,7 +161,7 @@
     [buttonArray1 mas_distributeViewsAlongAxis:MASAxisTypeVertical withFixedSpacing:5 leadSpacing:5 tailSpacing:5];
     [buttonArray1 makeConstraints:^(MASConstraintMaker *make) {
         
-        make.width.equalTo(@100);
+        make.width.equalTo(@120);
         make.left.equalTo(self.bottomView1);
     }];
 
