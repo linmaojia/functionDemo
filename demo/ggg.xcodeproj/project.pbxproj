@@ -42,11 +42,24 @@
 		894D8FF11DB9C48000AE66ED /* YZGPublishController.m in Sources */ = {isa = PBXBuildFile; fileRef = 894D8FF01DB9C48000AE66ED /* YZGPublishController.m */; };
 		8958495C1DCAC9A4004585E7 /* YZGDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 895849541DCAC9A4004585E7 /* YZGDataController.m */; };
 		895849651DCACC47004585E7 /* YZGDataController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 895849641DCACC47004585E7 /* YZGDataController.xib */; };
-		895849691DCACEF0004585E7 /* kkkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 895849671DCACEF0004585E7 /* kkkViewController.m */; };
-		8958496A1DCACEF0004585E7 /* kkkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 895849681DCACEF0004585E7 /* kkkViewController.xib */; };
 		895849701DCAD337004585E7 /* YZGUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 8958496D1DCAD337004585E7 /* YZGUser.m */; };
 		895849711DCAD337004585E7 /* YZGUserManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8958496F1DCAD337004585E7 /* YZGUserManager.m */; };
 		895849741DCAD997004585E7 /* YZGPhoneTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 895849731DCAD997004585E7 /* YZGPhoneTableView.m */; };
+		895849801DCB0409004585E7 /* YZGFMDBController.m in Sources */ = {isa = PBXBuildFile; fileRef = 895849781DCB0409004585E7 /* YZGFMDBController.m */; };
+		8958498F1DCB05EE004585E7 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 895849851DCB05EE004585E7 /* FMDatabase.m */; };
+		895849901DCB05EE004585E7 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 895849871DCB05EE004585E7 /* FMDatabaseAdditions.m */; };
+		895849911DCB05EE004585E7 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 895849891DCB05EE004585E7 /* FMDatabasePool.m */; };
+		895849921DCB05EE004585E7 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 8958498B1DCB05EE004585E7 /* FMDatabaseQueue.m */; };
+		895849931DCB05EE004585E7 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 8958498E1DCB05EE004585E7 /* FMResultSet.m */; };
+		895849951DCB0635004585E7 /* YZGFMDBController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 895849941DCB0635004585E7 /* YZGFMDBController.xib */; };
+		895849981DCB0791004585E7 /* WordOBJ.m in Sources */ = {isa = PBXBuildFile; fileRef = 895849971DCB0791004585E7 /* WordOBJ.m */; };
+		8958499A1DCB09EE004585E7 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 895849991DCB09EE004585E7 /* libsqlite3.tbd */; };
+		89584AA81DCB3A08004585E7 /* YZGCoreController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89584AA01DCB3A08004585E7 /* YZGCoreController.m */; };
+		89584AAD1DCB3A47004585E7 /* UserModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 89584AAB1DCB3A47004585E7 /* UserModel.xcdatamodeld */; };
+		89584AB31DCB3B11004585E7 /* Users+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 89584AB01DCB3B11004585E7 /* Users+CoreDataClass.m */; };
+		89584AB41DCB3B11004585E7 /* Users+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 89584AB21DCB3B11004585E7 /* Users+CoreDataProperties.m */; };
+		89584AB61DCB3B64004585E7 /* YZGCoreController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89584AB51DCB3B64004585E7 /* YZGCoreController.xib */; };
+		89584AB91DCB3DFE004585E7 /* YZGCoreTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 89584AB81DCB3DFE004585E7 /* YZGCoreTableView.m */; };
 		8967BB651DA744190081BDA1 /* UIView+PBExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = 8967BAF61DA744190081BDA1 /* UIView+PBExtend.m */; };
 		8967BB661DA744190081BDA1 /* PBConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 8967BAF91DA744190081BDA1 /* PBConst.m */; };
 		8967BB671DA744190081BDA1 /* PhotoBroswerLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 8967BAFC1DA744190081BDA1 /* PhotoBroswerLayout.m */; };
@@ -278,15 +291,39 @@
 		895849531DCAC9A4004585E7 /* YZGDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZGDataController.h; sourceTree = "<group>"; };
 		895849541DCAC9A4004585E7 /* YZGDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZGDataController.m; sourceTree = "<group>"; };
 		895849641DCACC47004585E7 /* YZGDataController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YZGDataController.xib; sourceTree = "<group>"; };
-		895849661DCACEF0004585E7 /* kkkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kkkViewController.h; sourceTree = "<group>"; };
-		895849671DCACEF0004585E7 /* kkkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = kkkViewController.m; sourceTree = "<group>"; };
-		895849681DCACEF0004585E7 /* kkkViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = kkkViewController.xib; sourceTree = "<group>"; };
 		8958496C1DCAD337004585E7 /* YZGUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZGUser.h; sourceTree = "<group>"; };
 		8958496D1DCAD337004585E7 /* YZGUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZGUser.m; sourceTree = "<group>"; };
 		8958496E1DCAD337004585E7 /* YZGUserManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZGUserManager.h; sourceTree = "<group>"; };
 		8958496F1DCAD337004585E7 /* YZGUserManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZGUserManager.m; sourceTree = "<group>"; };
 		895849721DCAD997004585E7 /* YZGPhoneTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZGPhoneTableView.h; sourceTree = "<group>"; };
 		895849731DCAD997004585E7 /* YZGPhoneTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZGPhoneTableView.m; sourceTree = "<group>"; };
+		895849771DCB0409004585E7 /* YZGFMDBController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZGFMDBController.h; sourceTree = "<group>"; };
+		895849781DCB0409004585E7 /* YZGFMDBController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZGFMDBController.m; sourceTree = "<group>"; };
+		895849841DCB05EE004585E7 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		895849851DCB05EE004585E7 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		895849861DCB05EE004585E7 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		895849871DCB05EE004585E7 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		895849881DCB05EE004585E7 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		895849891DCB05EE004585E7 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		8958498A1DCB05EE004585E7 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		8958498B1DCB05EE004585E7 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		8958498C1DCB05EE004585E7 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		8958498D1DCB05EE004585E7 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		8958498E1DCB05EE004585E7 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		895849941DCB0635004585E7 /* YZGFMDBController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YZGFMDBController.xib; sourceTree = "<group>"; };
+		895849961DCB0791004585E7 /* WordOBJ.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WordOBJ.h; sourceTree = "<group>"; };
+		895849971DCB0791004585E7 /* WordOBJ.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WordOBJ.m; sourceTree = "<group>"; };
+		895849991DCB09EE004585E7 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		89584A9F1DCB3A08004585E7 /* YZGCoreController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZGCoreController.h; sourceTree = "<group>"; };
+		89584AA01DCB3A08004585E7 /* YZGCoreController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZGCoreController.m; sourceTree = "<group>"; };
+		89584AAC1DCB3A47004585E7 /* UserModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserModel.xcdatamodel; sourceTree = "<group>"; };
+		89584AAF1DCB3B11004585E7 /* Users+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Users+CoreDataClass.h"; path = "../models/Users+CoreDataClass.h"; sourceTree = "<group>"; };
+		89584AB01DCB3B11004585E7 /* Users+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Users+CoreDataClass.m"; path = "../models/Users+CoreDataClass.m"; sourceTree = "<group>"; };
+		89584AB11DCB3B11004585E7 /* Users+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Users+CoreDataProperties.h"; sourceTree = "<group>"; };
+		89584AB21DCB3B11004585E7 /* Users+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Users+CoreDataProperties.m"; sourceTree = "<group>"; };
+		89584AB51DCB3B64004585E7 /* YZGCoreController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YZGCoreController.xib; sourceTree = "<group>"; };
+		89584AB71DCB3DFE004585E7 /* YZGCoreTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZGCoreTableView.h; sourceTree = "<group>"; };
+		89584AB81DCB3DFE004585E7 /* YZGCoreTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZGCoreTableView.m; sourceTree = "<group>"; };
 		8967BAF51DA744190081BDA1 /* UIView+PBExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+PBExtend.h"; sourceTree = "<group>"; };
 		8967BAF61DA744190081BDA1 /* UIView+PBExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+PBExtend.m"; sourceTree = "<group>"; };
 		8967BAF81DA744190081BDA1 /* PBConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBConst.h; sourceTree = "<group>"; };
@@ -596,6 +633,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8958499A1DCB09EE004585E7 /* libsqlite3.tbd in Frameworks */,
 				4B5CCE2367F87C06CA2184E5 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -704,6 +742,7 @@
 		63C68D6D19526EC5069484D3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				895849991DCB09EE004585E7 /* libsqlite3.tbd */,
 				B04BCDD45FA04AF840E84C3D /* libPods.a */,
 			);
 			name = Frameworks;
@@ -786,6 +825,7 @@
 		894D8FCD1DB9B90E00AE66ED /* 第三方小组件2 */ = {
 			isa = PBXGroup;
 			children = (
+				895849831DCB05EE004585E7 /* FMDB(数据库) */,
 				894D8FCE1DB9BA1B00AE66ED /* TZImagePickerController */,
 			);
 			name = "第三方小组件2";
@@ -836,9 +876,6 @@
 				895849531DCAC9A4004585E7 /* YZGDataController.h */,
 				895849541DCAC9A4004585E7 /* YZGDataController.m */,
 				895849641DCACC47004585E7 /* YZGDataController.xib */,
-				895849661DCACEF0004585E7 /* kkkViewController.h */,
-				895849671DCACEF0004585E7 /* kkkViewController.m */,
-				895849681DCACEF0004585E7 /* kkkViewController.xib */,
 			);
 			path = controllers;
 			sourceTree = "<group>";
@@ -861,6 +898,109 @@
 				8958496F1DCAD337004585E7 /* YZGUserManager.m */,
 			);
 			path = "UserTools(用户管理)";
+			sourceTree = "<group>";
+		};
+		895849751DCB0409004585E7 /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				895849761DCB0409004585E7 /* controllers */,
+				895849791DCB0409004585E7 /* models */,
+				8958497F1DCB0409004585E7 /* views */,
+			);
+			path = FMDB;
+			sourceTree = "<group>";
+		};
+		895849761DCB0409004585E7 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				895849771DCB0409004585E7 /* YZGFMDBController.h */,
+				895849781DCB0409004585E7 /* YZGFMDBController.m */,
+				895849941DCB0635004585E7 /* YZGFMDBController.xib */,
+			);
+			path = controllers;
+			sourceTree = "<group>";
+		};
+		895849791DCB0409004585E7 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				895849961DCB0791004585E7 /* WordOBJ.h */,
+				895849971DCB0791004585E7 /* WordOBJ.m */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		8958497F1DCB0409004585E7 /* views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		895849831DCB05EE004585E7 /* FMDB(数据库) */ = {
+			isa = PBXGroup;
+			children = (
+				895849841DCB05EE004585E7 /* FMDatabase.h */,
+				895849851DCB05EE004585E7 /* FMDatabase.m */,
+				895849861DCB05EE004585E7 /* FMDatabaseAdditions.h */,
+				895849871DCB05EE004585E7 /* FMDatabaseAdditions.m */,
+				895849881DCB05EE004585E7 /* FMDatabasePool.h */,
+				895849891DCB05EE004585E7 /* FMDatabasePool.m */,
+				8958498A1DCB05EE004585E7 /* FMDatabaseQueue.h */,
+				8958498B1DCB05EE004585E7 /* FMDatabaseQueue.m */,
+				8958498C1DCB05EE004585E7 /* FMDB.h */,
+				8958498D1DCB05EE004585E7 /* FMResultSet.h */,
+				8958498E1DCB05EE004585E7 /* FMResultSet.m */,
+			);
+			path = "FMDB(数据库)";
+			sourceTree = "<group>";
+		};
+		89584A9D1DCB3A08004585E7 /* coreData */ = {
+			isa = PBXGroup;
+			children = (
+				89584A9E1DCB3A08004585E7 /* controllers */,
+				89584AAE1DCB3B11004585E7 /* models */,
+				89584AA41DCB3A08004585E7 /* tool */,
+				89584AA71DCB3A08004585E7 /* views */,
+			);
+			path = coreData;
+			sourceTree = "<group>";
+		};
+		89584A9E1DCB3A08004585E7 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				89584A9F1DCB3A08004585E7 /* YZGCoreController.h */,
+				89584AA01DCB3A08004585E7 /* YZGCoreController.m */,
+				89584AB51DCB3B64004585E7 /* YZGCoreController.xib */,
+			);
+			path = controllers;
+			sourceTree = "<group>";
+		};
+		89584AA41DCB3A08004585E7 /* tool */ = {
+			isa = PBXGroup;
+			children = (
+				89584AB71DCB3DFE004585E7 /* YZGCoreTableView.h */,
+				89584AB81DCB3DFE004585E7 /* YZGCoreTableView.m */,
+				89584AAF1DCB3B11004585E7 /* Users+CoreDataClass.h */,
+				89584AB01DCB3B11004585E7 /* Users+CoreDataClass.m */,
+				89584AAB1DCB3A47004585E7 /* UserModel.xcdatamodeld */,
+			);
+			path = tool;
+			sourceTree = "<group>";
+		};
+		89584AA71DCB3A08004585E7 /* views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		89584AAE1DCB3B11004585E7 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				89584AB11DCB3B11004585E7 /* Users+CoreDataProperties.h */,
+				89584AB21DCB3B11004585E7 /* Users+CoreDataProperties.m */,
+			);
+			path = models;
 			sourceTree = "<group>";
 		};
 		8967BAF11DA744190081BDA1 /* CorePhotoBroswerVC */ = {
@@ -1771,6 +1911,8 @@
 			children = (
 				8997C5DB1D51E1C40000DB9A /* AppDelegate.h */,
 				8997C5DC1D51E1C40000DB9A /* AppDelegate.m */,
+				89584A9D1DCB3A08004585E7 /* coreData */,
+				895849751DCB0409004585E7 /* FMDB */,
 				8958496B1DCAD337004585E7 /* UserTools(用户管理) */,
 				895849511DCAC9A4004585E7 /* 归档，NSUserDefault */,
 				894D8FBA1DB9B4A000AE66ED /* 相册 */,
@@ -1940,8 +2082,9 @@
 				895849651DCACC47004585E7 /* YZGDataController.xib in Resources */,
 				8967BB891DA744190081BDA1 /* CoreSDWebImage.bundle in Resources */,
 				8979C23E1D7EE273008A2D72 /* MJRefresh.bundle in Resources */,
+				89584AB61DCB3B64004585E7 /* YZGCoreController.xib in Resources */,
+				895849951DCB0635004585E7 /* YZGFMDBController.xib in Resources */,
 				894D8FE81DB9BA1B00AE66ED /* TZImagePickerController.bundle in Resources */,
-				8958496A1DCACEF0004585E7 /* kkkViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2024,6 +2167,7 @@
 				898AB7311D87E5FC001B07A9 /* YZGRemarksView.m in Sources */,
 				8967BB7A1DA744190081BDA1 /* NSObject+Extend.m in Sources */,
 				8967BB881DA744190081BDA1 /* UIImage+ReMake.m in Sources */,
+				895849921DCB05EE004585E7 /* FMDatabaseQueue.m in Sources */,
 				8967BC8D1DB5CAE60081BDA1 /* UIView+HYBUIViewCommon.m in Sources */,
 				8979C23A1D7EE273008A2D72 /* MJRefreshBackStateFooter.m in Sources */,
 				8979A6E51D6D6E5B00A4A4E2 /* UIImageView+HighlightedWebCache.m in Sources */,
@@ -2045,6 +2189,7 @@
 				8979C2301D7EE273008A2D72 /* MJRefreshAutoFooter.m in Sources */,
 				89EFCD8C1D9CA7460099325D /* YZGRootNavigationController.m in Sources */,
 				8967BB671DA744190081BDA1 /* PhotoBroswerLayout.m in Sources */,
+				89584AB31DCB3B11004585E7 /* Users+CoreDataClass.m in Sources */,
 				8967BB661DA744190081BDA1 /* PBConst.m in Sources */,
 				8967BB8A1DA744190081BDA1 /* UIButton+SD.m in Sources */,
 				8979C2811D7EEBE2008A2D72 /* Reachability.m in Sources */,
@@ -2056,6 +2201,7 @@
 				8967BB7C1DA744190081BDA1 /* NSString+Password.m in Sources */,
 				898AB6FA1D87BF57001B07A9 /* YZGAlertView.m in Sources */,
 				8979C23C1D7EE273008A2D72 /* MJRefreshNormalHeader.m in Sources */,
+				895849981DCB0791004585E7 /* WordOBJ.m in Sources */,
 				8967BB791DA744190081BDA1 /* NSDate+Extend.m in Sources */,
 				8979C2371D7EE273008A2D72 /* MJRefreshAutoStateFooter.m in Sources */,
 				89EFCD861D9CA21C0099325D /* YZGShoppingCarView.m in Sources */,
@@ -2065,6 +2211,7 @@
 				898AB7201D87E41D001B07A9 /* IQNSArray+Sort.m in Sources */,
 				898AB7291D87E41D001B07A9 /* IQBarButtonItem.m in Sources */,
 				8967BB741DA744190081BDA1 /* NSString+File.m in Sources */,
+				8958498F1DCB05EE004585E7 /* FMDatabase.m in Sources */,
 				3D7A0F981D940EBC00C6E04B /* JVFloatLabeledTextField.m in Sources */,
 				8979A6DC1D6D6E5B00A4A4E2 /* SDWebImageDecoder.m in Sources */,
 				8967BB8D1DA744190081BDA1 /* CoreSVP.m in Sources */,
@@ -2072,6 +2219,7 @@
 				894D8FCC1DB9B6C200AE66ED /* CustomAlertView.m in Sources */,
 				898AB72D1D87E41D001B07A9 /* IQUIView+IQKeyboardToolbar.m in Sources */,
 				3D7A0F991D940EBC00C6E04B /* JVFloatLabeledTextView.m in Sources */,
+				89584AB41DCB3B11004585E7 /* Users+CoreDataProperties.m in Sources */,
 				8979C1FB1D7EDF66008A2D72 /* UIColor+Extend.m in Sources */,
 				8979C2351D7EE273008A2D72 /* MJRefreshAutoGifFooter.m in Sources */,
 				89EC6ED71DBB5484001A1F2C /* YZGPictuersCollectionView.m in Sources */,
@@ -2103,11 +2251,12 @@
 				898AB7221D87E41D001B07A9 /* IQUITextFieldView+Additions.m in Sources */,
 				8979A6A11D6D4AE700A4A4E2 /* MJPropertyKey.m in Sources */,
 				898AB7241D87E41D001B07A9 /* IQUIViewController+Additions.m in Sources */,
+				895849911DCB05EE004585E7 /* FMDatabasePool.m in Sources */,
 				89490A481D965A58004569A6 /* YZGErrorViews.m in Sources */,
+				89584AAD1DCB3A47004585E7 /* UserModel.xcdatamodeld in Sources */,
 				894D8FC71DB9B4A000AE66ED /* YZGPicManager.m in Sources */,
 				8979A6A21D6D4AE700A4A4E2 /* MJPropertyType.m in Sources */,
 				8967BB721DA744190081BDA1 /* PhotoBroswerVC.m in Sources */,
-				895849691DCACEF0004585E7 /* kkkViewController.m in Sources */,
 				898AB6C81D87BDDC001B07A9 /* YZGRootViewController.m in Sources */,
 				8967BB7F1DA744190081BDA1 /* UIFont+Extend.m in Sources */,
 				8967BB7E1DA744190081BDA1 /* UIDevice+Extend.m in Sources */,
@@ -2128,8 +2277,10 @@
 				894D8FC51DB9B4A000AE66ED /* YZGPicController.m in Sources */,
 				894D8FF11DB9C48000AE66ED /* YZGPublishController.m in Sources */,
 				8967BB8B1DA744190081BDA1 /* UIImageView+SD.m in Sources */,
+				895849931DCB05EE004585E7 /* FMResultSet.m in Sources */,
 				894D8FEA1DB9BA1B00AE66ED /* TZPhotoPickerController.m in Sources */,
 				8958495C1DCAC9A4004585E7 /* YZGDataController.m in Sources */,
+				895849801DCB0409004585E7 /* YZGFMDBController.m in Sources */,
 				8979A6E41D6D6E5B00A4A4E2 /* UIImage+WebP.m in Sources */,
 				895849741DCAD997004585E7 /* YZGPhoneTableView.m in Sources */,
 				8979C1F81D7EDF66008A2D72 /* NSString+Password.m in Sources */,
@@ -2150,11 +2301,13 @@
 				8967BB841DA744190081BDA1 /* UIImage+Water.m in Sources */,
 				8979C25F1D7EE43B008A2D72 /* SVProgressAnimatedView.m in Sources */,
 				8979A6DA1D6D6E5B00A4A4E2 /* SDImageCache.m in Sources */,
+				89584AA81DCB3A08004585E7 /* YZGCoreController.m in Sources */,
 				898AB72C1D87E41D001B07A9 /* IQToolbar.m in Sources */,
 				8979A6DD1D6D6E5B00A4A4E2 /* SDWebImageDownloader.m in Sources */,
 				8979C2621D7EE43B008A2D72 /* SVRadialGradientLayer.m in Sources */,
 				8979C1FE1D7EDF66008A2D72 /* UIView+Borders.m in Sources */,
 				8967BB6F1DA744190081BDA1 /* PhotoImageView.m in Sources */,
+				895849901DCB05EE004585E7 /* FMDatabaseAdditions.m in Sources */,
 				898AB7251D87E41D001B07A9 /* IQUIWindow+Hierarchy.m in Sources */,
 				898AB7271D87E41D001B07A9 /* IQKeyboardReturnKeyHandler.m in Sources */,
 				8967BB761DA744190081BDA1 /* CALayer+Anim.m in Sources */,
@@ -2173,6 +2326,7 @@
 				8979C2731D7EE8F5008A2D72 /* SVHTTPClient.m in Sources */,
 				894D8FE71DB9BA1B00AE66ED /* TZImageManager.m in Sources */,
 				894D8FEC1DB9BA1B00AE66ED /* TZPhotoPreviewController.m in Sources */,
+				89584AB91DCB3DFE004585E7 /* YZGCoreTableView.m in Sources */,
 				8979C2421D7EE273008A2D72 /* UIScrollView+MJRefresh.m in Sources */,
 				8979C23B1D7EE273008A2D72 /* MJRefreshGifHeader.m in Sources */,
 				8979C2741D7EE8F5008A2D72 /* SVHTTPRequest.m in Sources */,
@@ -2437,6 +2591,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		89584AAB1DCB3A47004585E7 /* UserModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				89584AAC1DCB3A47004585E7 /* UserModel.xcdatamodel */,
+			);
+			currentVersion = 89584AAC1DCB3A47004585E7 /* UserModel.xcdatamodel */;
+			path = UserModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 8997C5CD1D51E1C30000DB9A /* Project object */;
 }

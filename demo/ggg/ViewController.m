@@ -10,6 +10,8 @@
 #import "YZGPicController.h"
 #import "KViewController.h"
 #import "YZGDataController.h"
+#import "YZGFMDBController.h"
+#import "YZGCoreController.h"
 @interface ViewController ()
 {
     NSMutableArray *buttonArray;    /**< 按钮数组 */
@@ -29,7 +31,7 @@
         buttonArray = [NSMutableArray new];//使用数组约束
         _bottomView = [[UIView alloc]init];
         _bottomView.backgroundColor = [UIColor whiteColor];
-        NSArray *array = [NSArray arrayWithObjects:@"相册",@"归档,NSUserDefaults",@"收货地址管理",@"收藏页面",@"物流地址管理",@"支付成功",@"退款详情",@"订单列表按钮",@"我的收藏" ,@"商品详情",nil];
+        NSArray *array = [NSArray arrayWithObjects:@"相册",@"归档,NSUserDefaults",@"FMDB",@"CoreData",@"物流地址管理",@"支付成功",@"退款详情",@"订单列表按钮",@"我的收藏" ,@"商品详情",nil];
         for(int i=0;i<array.count;i++){
             
             UIButton *button=[UIButton buttonWithType:UIButtonTypeSystem];
@@ -112,6 +114,17 @@
             
         }
             break;
+        case 102:{
+            [self.navigationController pushViewController:[YZGFMDBController new] animated:YES];
+            
+        }
+            break;
+        case 103:{
+            [self.navigationController pushViewController:[YZGCoreController new] animated:YES];
+            
+        }
+            break;
+      
       
      
         default:

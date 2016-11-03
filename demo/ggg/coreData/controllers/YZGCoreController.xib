@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YZGCoreController">
+            <connections>
+                <outlet property="textFild" destination="REa-aM-epC" id="h7M-8F-u3h"/>
+                <outlet property="view" destination="iN0-l3-epB" id="5d4-lq-prd"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="452"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="REa-aM-epC">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="HMj-vu-JBp"/>
+                        <constraint firstAttribute="width" constant="160" id="eGc-Ef-K0m"/>
+                    </constraints>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AzH-Qp-nKd">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="O7a-ce-1aS"/>
+                        <constraint firstAttribute="width" constant="31" id="v5z-nY-gp2"/>
+                    </constraints>
+                    <state key="normal" title="添加"/>
+                    <connections>
+                        <action selector="insert:" destination="-1" eventType="touchUpInside" id="I2s-ZM-KOm"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2MA-rg-hnC">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="f1Y-re-7MS"/>
+                        <constraint firstAttribute="width" constant="31" id="m5X-Ju-CdM"/>
+                    </constraints>
+                    <state key="normal" title="查询"/>
+                    <connections>
+                        <action selector="select:" destination="-1" eventType="touchUpInside" id="N9B-yj-TvB"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aO8-L6-Owc">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="DpM-2r-vQr"/>
+                        <constraint firstAttribute="width" constant="31" id="GsP-2o-csa"/>
+                    </constraints>
+                    <state key="normal" title="删除"/>
+                    <connections>
+                        <action selector="delete:" destination="-1" eventType="touchUpInside" id="cdm-4L-e4R"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="2MA-rg-hnC" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="24" id="6CL-e2-pb4"/>
+                <constraint firstItem="aO8-L6-Owc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="24" id="7O4-Kr-bvt"/>
+                <constraint firstItem="2MA-rg-hnC" firstAttribute="top" secondItem="AzH-Qp-nKd" secondAttribute="bottom" constant="39" id="9td-QA-64C"/>
+                <constraint firstItem="REa-aM-epC" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="TL1-kt-KYJ"/>
+                <constraint firstItem="AzH-Qp-nKd" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="24" id="hTW-VQ-3Xq"/>
+                <constraint firstItem="REa-aM-epC" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="26" id="oQt-qm-hei"/>
+                <constraint firstItem="AzH-Qp-nKd" firstAttribute="top" secondItem="REa-aM-epC" secondAttribute="bottom" constant="34" id="qLS-OY-gEL"/>
+                <constraint firstItem="aO8-L6-Owc" firstAttribute="top" secondItem="2MA-rg-hnC" secondAttribute="bottom" constant="36" id="vTb-lg-K16"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="176" y="-29"/>
+        </view>
+    </objects>
+</document>
