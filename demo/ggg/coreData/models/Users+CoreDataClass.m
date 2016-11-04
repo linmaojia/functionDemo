@@ -7,25 +7,32 @@
 //
 
 #import "Users+CoreDataClass.h"
-#import "AppDelegate.h"
+#import "CoreDataManager.h"
+
+#define kManagedObjectContext [CoreDataManager sharedInstance].managedObjectContext
 @implementation Users
-//插入数据
-+(BOOL)insertGifModel:(NSDictionary *)gifmodelDic{
-    BOOL flag = NO;
+
+/*插入数据*/
++(BOOL)insertModel:(NSMutableDictionary *)model
+{
+     BOOL flag = NO;
     
+    //获取模型
+    Users *courseEntity = [NSEntityDescription insertNewObjectForEntityForName:@"Users" inManagedObjectContext:kManagedObjectContext];
     
-    AppDelegate *appdelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    courseEntity.name = model[@"name"];
     
-    NSManagedObjectContext *context = appdelegate.managedObjectContext;
+    courseEntity.age = model[@"age"];
     
-    Users *footModel = [NSEntityDescription insertNewObjectForEntityForName:@"Users" inManagedObjectContext:context];
+    courseEntity.createtime = [NSDate date];
     
-    footModel.name = gifmodelDic[@"name"];
-    footModel.age = gifmodelDic[@"age"];
+    courseEntity.tableName = model[@"tableName"];//用于分辨多个表
     
-    [appdelegate saveContext];
+    [[CoreDataManager sharedInstance] saveContext]; //插入 保存
+    
     NSError *error = nil;
-    if ([context save:&error])
+    
+    if ([kManagedObjectContext save:&error])
     {
         NSLog(@"msg = 插入成功");
         flag = YES;
@@ -35,68 +42,110 @@
         NSLog(@"error = %@",error.debugDescription);
         flag = NO;
     }
-    
     return flag;
-    
+
 }
-//查询所有数据
-+(NSMutableArray *)find{
+/*查询所有数据*/
++(NSMutableArray *)selectAllDataWithTableName:(NSString *)tableName
+{
     NSMutableArray *array = [NSMutableArray array];
     
-    AppDelegate *appdelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    NSEntityDescription *description = [NSEntityDescription entityForName:@"Users" inManagedObjectContext:kManagedObjectContext];
     
-    NSManagedObjectContext *context = appdelegate.managedObjectContext;
-    
-    NSEntityDescription *description = [NSEntityDescription entityForName:@"Users" inManagedObjectContext:context];
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    
     [request setIncludesPropertyValues:NO];
+    
     [request setEntity:description];
+    
+    //查询条件
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"tableName = %@ " ,tableName];//按条件查询
+    
+    [request setPredicate:predicate];
+
+    //根据创建时间倒序查询
+    NSSortDescriptor* sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"createtime" ascending:NO];//ascending 是否升序,NO 为降序
+    [request setSortDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+    
+    
     NSError *error = nil;
-    NSArray *datas = [context executeFetchRequest:request error:&error];
-    if (!error) {
+    
+    NSArray *datas = [kManagedObjectContext executeFetchRequest:request error:&error];
+    
+    if (!error)
+    {
         [array addObjectsFromArray:datas];
     }
     return array;
 }
-+(BOOL)deleteGifModelWithString:(NSString *)string
+
+
+/**
+ 删除某条数据
+
+ @param string 字段名称
+
+ @return BOOL 布尔类型
+ */
++(BOOL)deleteModel:(NSDictionary *)model
 {
+    NSString *tableName = model[@"tableName"];
+    
+    NSString *name = model[@"name"];
+
+    
     BOOL flag = NO;
     
-    AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    NSManagedObjectContext *context = delegate.managedObjectContext;
-    NSEntityDescription *description = [NSEntityDescription entityForName:@"Users" inManagedObjectContext:context];
+    NSEntityDescription *description = [NSEntityDescription entityForName:@"Users" inManagedObjectContext:kManagedObjectContext];
+    
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    
     [request setIncludesPropertyValues:NO];
+    
     [request setEntity:description];
     
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name like %@ ",string];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name = %@ && tableName = %@ " ,name,tableName];//按条件查询
     
     [request setPredicate:predicate];
     
-    flag = [Users deleteGifModel:request];
+    flag = [self deleteGifModel:request];
     
     return flag;
+
 }
+
+
+/**
+  删除某条数据
+
+ @param fetchRequst 请求体
+
+ @return BOOL 布尔类型
+ */
 +(BOOL)deleteGifModel:(NSFetchRequest *)fetchRequst
 {
     BOOL flag = NO;
-    
-    AppDelegate *appdelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    
-    NSManagedObjectContext *context = appdelegate.managedObjectContext;
+
     NSError *error = nil;
-    NSArray *datas = [context executeFetchRequest:fetchRequst error:&error];
-    if (!error && datas.count > 0) {
-        for (int i = 0; i < datas.count; i++) {
-            
+    
+    NSArray *datas = [kManagedObjectContext executeFetchRequest:fetchRequst error:&error];
+    
+    if (!error && datas.count > 0)
+    {
+        for (int i = 0; i < datas.count; i++)
+        {
             //删除满足条件的gifmodel
-            [context deleteObject:datas[i]];
-            [appdelegate saveContext];
+            [kManagedObjectContext deleteObject:datas[i]];
             
-            if ([context save:&error]) {
+            [[CoreDataManager sharedInstance] saveContext]; //插入 保存
+            
+            if ([kManagedObjectContext save:&error])
+            {
                 NSLog(@"msg = 删除成功");
                 flag = YES;
-            }else{
+            }
+            else
+            {
                 NSLog(@"error = %@",error.debugDescription);
                 flag = NO;
             }
@@ -106,30 +155,31 @@
     
     return flag;
 }
-+(BOOL)deleteAll
++(BOOL)deleteAllData
 {
     BOOL flag = NO;
-    AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    NSManagedObjectContext *context = delegate.managedObjectContext;
-    NSEntityDescription *description = [NSEntityDescription entityForName:@"Users" inManagedObjectContext:context];
+   
+    NSEntityDescription *description = [NSEntityDescription entityForName:@"Users" inManagedObjectContext:kManagedObjectContext];
+    
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    
     [request setIncludesPropertyValues:NO];
+    
     [request setEntity:description];
-    flag = [Users deleteGifModel:request];
+    
+    flag = [self deleteGifModel:request];
     
     return flag;
 }
+
+
 +(NSMutableArray *)findWithFetchRequest:(NSFetchRequest *)request
 {
     
-    
     NSMutableArray *array = [NSMutableArray array];
-    AppDelegate *appdelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-    
-    NSManagedObjectContext *context = appdelegate.managedObjectContext;
     
     NSError *error = nil;
-    NSArray *datas = [context executeFetchRequest:request error:&error];
+    NSArray *datas = [kManagedObjectContext executeFetchRequest:request error:&error];
     if (!error) {
         [array addObjectsFromArray:datas];
     }

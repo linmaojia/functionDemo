@@ -12,19 +12,26 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Users : NSManagedObject
-//插入数据
-+(BOOL)insertGifModel:(NSDictionary *)gifmodelDic;
-//查找所有数据
-+(NSMutableArray *)find;
-//根据条件删除数据
-+(BOOL)deleteGifModel:(NSFetchRequest *)fetchRequst;
-//删除所有数据
-+(BOOL)deleteAll;
-//根据条件查找所有数据
+
+/*插入数据*/
++(BOOL)insertModel:(NSMutableDictionary *)model;
+
+/*删除某条数据*/
++(BOOL)deleteModel:(NSMutableDictionary *)model;
+
+/*查找所有数据*/
++(NSMutableArray *)selectAllDataWithTableName:(NSString *)tableName;
+
+/*删除所有数据*/
++(BOOL)deleteAllData;
+
+
+
+/*根据条件查找数据*/
 +(NSMutableArray *)findWithFetchRequest:(NSFetchRequest *)request;
 
 
-+(BOOL)deleteGifModelWithString:(NSString *)string;
+
 @end
 
 NS_ASSUME_NONNULL_END

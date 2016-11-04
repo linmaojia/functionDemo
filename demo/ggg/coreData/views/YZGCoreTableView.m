@@ -67,7 +67,7 @@
     Users *user = _dataArray[indexPath.row];
     cell.textLabel.text = user.name;
     return cell;
-    
+   
 //    YZGProductListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ProductListCell" forIndexPath:indexPath];
 //    cell.model = self.dataArray[indexPath.row];
 //    return cell;
@@ -79,10 +79,11 @@
     
 //    ProductDetail *productDetail = self.dataArray[indexPath.row];
 //    NSString *productId = productDetail.seqid;
-//    
-//    if(self.cellClickBlack)
-//    {
-//        self.cellClickBlack(productId);
-//    }
+    
+    Users *user = _dataArray[indexPath.row];
+    if(self.cellClickBlack)
+    {
+        self.cellClickBlack(user.name);
+    }
 }
 @end

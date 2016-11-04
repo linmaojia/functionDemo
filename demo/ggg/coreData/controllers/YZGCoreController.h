@@ -7,7 +7,7 @@
 //
 
 #import "YZGRootViewController.h"
-/**< 商品详情 */
+/**< coreData */
 @interface YZGCoreController : YZGRootViewController
 
 @end

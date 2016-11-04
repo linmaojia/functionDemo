@@ -17,6 +17,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nullable, nonatomic, copy) NSString *name;
 @property (nullable, nonatomic, copy) NSString *age;
+@property (nullable, nonatomic, copy) NSDate *createtime;
+@property (nullable, nonatomic, copy) NSString *tableName;
+
 
 @end
 

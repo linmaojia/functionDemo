@@ -16,5 +16,8 @@
 
 @dynamic name;
 @dynamic age;
+@dynamic createtime;
+@dynamic tableName;
+
 
 @end

@@ -25,7 +25,7 @@
         ESWeakSelf;
         _tableView = [[YZGCoreTableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
         _tableView.cellClickBlack = ^(NSString *text){
-            
+            __weakSelf.textFild.text = text;
         };
     }
     return _tableView;
@@ -63,25 +63,61 @@
     
 }
 - (IBAction)insert:(id)sender {
-    NSDictionary *dic=@{@"name":self.textFild.text,@"age":@"gg"};
     
-    
-    [Users insertGifModel:dic];
+    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+    [dic setValue:self.textFild.text forKey:@"name"];
+    [dic setValue:@"gg" forKey:@"age"];
+    [dic setValue:@"table_1" forKey:@"tableName"];
+
+    [Users insertModel:dic];
 }
 - (IBAction)select:(id)sender {
     
-    NSMutableArray *array =  [Users find];
+    NSMutableArray *array =  [Users selectAllDataWithTableName:@"table_1"];
     Users *gif = array[0];
     
     _tableView.dataArray = array;
-    NSLog(@"-------%@",gif.name);
+    NSLog(@"-------%@",gif.tableName);
 }
 - (IBAction)delete:(id)sender {
     
-     [Users deleteGifModelWithString:self.textFild.text];
+    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+    [dic setValue:self.textFild.text forKey:@"name"];
+    [dic setValue:@"table_1" forKey:@"tableName"];
     
-    _tableView.dataArray = [Users find];
+    [Users deleteModel:dic];
+    
+    _tableView.dataArray = [Users selectAllDataWithTableName:@"table_1"];
 }
+
+///////////////////////////////////////////////////////////
+- (IBAction)inser2:(id)sender {
+    
+    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+    [dic setValue:self.textFild.text forKey:@"name"];
+    [dic setValue:@"table_2" forKey:@"tableName"];
+    
+    [Users insertModel:dic];
+}
+- (IBAction)selec2:(id)sender {
+    
+    NSMutableArray *array =  [Users selectAllDataWithTableName:@"table_2"];
+    
+    _tableView.dataArray = array;
+}
+- (IBAction)delete2:(id)sender {
+    
+    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+    [dic setValue:self.textFild.text forKey:@"name"];
+    [dic setValue:@"table_2" forKey:@"tableName"];
+    
+    [Users deleteModel:dic];
+    
+    _tableView.dataArray = [Users selectAllDataWithTableName:@"table_2"];
+}
+
+
+
 #pragma mark ************** 添加子控件
 - (void)addSubviewsForView
 {

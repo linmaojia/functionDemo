@@ -59,7 +59,8 @@
 		89584AB31DCB3B11004585E7 /* Users+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 89584AB01DCB3B11004585E7 /* Users+CoreDataClass.m */; };
 		89584AB41DCB3B11004585E7 /* Users+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 89584AB21DCB3B11004585E7 /* Users+CoreDataProperties.m */; };
 		89584AB61DCB3B64004585E7 /* YZGCoreController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89584AB51DCB3B64004585E7 /* YZGCoreController.xib */; };
-		89584AB91DCB3DFE004585E7 /* YZGCoreTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 89584AB81DCB3DFE004585E7 /* YZGCoreTableView.m */; };
+		89584AFE1DCC187A004585E7 /* YZGCoreTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 89584AFD1DCC187A004585E7 /* YZGCoreTableView.m */; };
+		89584B011DCC1E74004585E7 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 89584B001DCC1E74004585E7 /* CoreDataManager.m */; };
 		8967BB651DA744190081BDA1 /* UIView+PBExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = 8967BAF61DA744190081BDA1 /* UIView+PBExtend.m */; };
 		8967BB661DA744190081BDA1 /* PBConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 8967BAF91DA744190081BDA1 /* PBConst.m */; };
 		8967BB671DA744190081BDA1 /* PhotoBroswerLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 8967BAFC1DA744190081BDA1 /* PhotoBroswerLayout.m */; };
@@ -322,8 +323,11 @@
 		89584AB11DCB3B11004585E7 /* Users+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Users+CoreDataProperties.h"; sourceTree = "<group>"; };
 		89584AB21DCB3B11004585E7 /* Users+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Users+CoreDataProperties.m"; sourceTree = "<group>"; };
 		89584AB51DCB3B64004585E7 /* YZGCoreController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YZGCoreController.xib; sourceTree = "<group>"; };
-		89584AB71DCB3DFE004585E7 /* YZGCoreTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZGCoreTableView.h; sourceTree = "<group>"; };
-		89584AB81DCB3DFE004585E7 /* YZGCoreTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZGCoreTableView.m; sourceTree = "<group>"; };
+		89584AFC1DCC187A004585E7 /* YZGCoreTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZGCoreTableView.h; sourceTree = "<group>"; };
+		89584AFD1DCC187A004585E7 /* YZGCoreTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZGCoreTableView.m; sourceTree = "<group>"; };
+		89584AFF1DCC1E74004585E7 /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
+		89584B001DCC1E74004585E7 /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
+		89584B021DCC370B004585E7 /* UserModel 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "UserModel 2.xcdatamodel"; sourceTree = "<group>"; };
 		8967BAF51DA744190081BDA1 /* UIView+PBExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+PBExtend.h"; sourceTree = "<group>"; };
 		8967BAF61DA744190081BDA1 /* UIView+PBExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+PBExtend.m"; sourceTree = "<group>"; };
 		8967BAF81DA744190081BDA1 /* PBConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBConst.h; sourceTree = "<group>"; };
@@ -978,8 +982,6 @@
 		89584AA41DCB3A08004585E7 /* tool */ = {
 			isa = PBXGroup;
 			children = (
-				89584AB71DCB3DFE004585E7 /* YZGCoreTableView.h */,
-				89584AB81DCB3DFE004585E7 /* YZGCoreTableView.m */,
 				89584AAF1DCB3B11004585E7 /* Users+CoreDataClass.h */,
 				89584AB01DCB3B11004585E7 /* Users+CoreDataClass.m */,
 				89584AAB1DCB3A47004585E7 /* UserModel.xcdatamodeld */,
@@ -990,6 +992,8 @@
 		89584AA71DCB3A08004585E7 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				89584AFC1DCC187A004585E7 /* YZGCoreTableView.h */,
+				89584AFD1DCC187A004585E7 /* YZGCoreTableView.m */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -1762,6 +1766,8 @@
 			children = (
 				89EFCD871D9CA3440099325D /* YZGDataManage.h */,
 				89EFCD881D9CA3440099325D /* YZGDataManage.m */,
+				89584AFF1DCC1E74004585E7 /* CoreDataManager.h */,
+				89584B001DCC1E74004585E7 /* CoreDataManager.m */,
 			);
 			name = tools;
 			path = models;
@@ -2259,9 +2265,11 @@
 				8967BB721DA744190081BDA1 /* PhotoBroswerVC.m in Sources */,
 				898AB6C81D87BDDC001B07A9 /* YZGRootViewController.m in Sources */,
 				8967BB7F1DA744190081BDA1 /* UIFont+Extend.m in Sources */,
+				89584B011DCC1E74004585E7 /* CoreDataManager.m in Sources */,
 				8967BB7E1DA744190081BDA1 /* UIDevice+Extend.m in Sources */,
 				8979C2341D7EE273008A2D72 /* MJRefreshHeader.m in Sources */,
 				8979A6A31D6D4AE700A4A4E2 /* NSObject+MJClass.m in Sources */,
+				89584AFE1DCC187A004585E7 /* YZGCoreTableView.m in Sources */,
 				897D8C121D703CDF00630817 /* UIColor+HexColor.m in Sources */,
 				8967BB651DA744190081BDA1 /* UIView+PBExtend.m in Sources */,
 				3D6C2C921D917CAE00BAA0AE /* KViewController.m in Sources */,
@@ -2326,7 +2334,6 @@
 				8979C2731D7EE8F5008A2D72 /* SVHTTPClient.m in Sources */,
 				894D8FE71DB9BA1B00AE66ED /* TZImageManager.m in Sources */,
 				894D8FEC1DB9BA1B00AE66ED /* TZPhotoPreviewController.m in Sources */,
-				89584AB91DCB3DFE004585E7 /* YZGCoreTableView.m in Sources */,
 				8979C2421D7EE273008A2D72 /* UIScrollView+MJRefresh.m in Sources */,
 				8979C23B1D7EE273008A2D72 /* MJRefreshGifHeader.m in Sources */,
 				8979C2741D7EE8F5008A2D72 /* SVHTTPRequest.m in Sources */,
@@ -2596,9 +2603,10 @@
 		89584AAB1DCB3A47004585E7 /* UserModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				89584B021DCC370B004585E7 /* UserModel 2.xcdatamodel */,
 				89584AAC1DCB3A47004585E7 /* UserModel.xcdatamodel */,
 			);
-			currentVersion = 89584AAC1DCB3A47004585E7 /* UserModel.xcdatamodel */;
+			currentVersion = 89584B021DCC370B004585E7 /* UserModel 2.xcdatamodel */;
 			path = UserModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
