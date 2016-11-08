@@ -195,6 +195,8 @@
 		898AB7351D87EE5B001B07A9 /* JKPlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 898AB7341D87EE5B001B07A9 /* JKPlaceholderTextView.m */; };
 		898AB75E1D882B04001B07A9 /* JKTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 898AB75D1D882B04001B07A9 /* JKTextField.m */; };
 		898BF95D1D8EB0F7009F01E4 /* YZGReturnAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 898BF95C1D8EB0F7009F01E4 /* YZGReturnAlertView.m */; };
+		898FB1411DD164FE00C397C8 /* YZGJSController.m in Sources */ = {isa = PBXBuildFile; fileRef = 898FB1391DD164FE00C397C8 /* YZGJSController.m */; };
+		898FB1451DD1673500C397C8 /* my.html in Resources */ = {isa = PBXBuildFile; fileRef = 898FB1441DD1673500C397C8 /* my.html */; };
 		8997C5DA1D51E1C40000DB9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8997C5D91D51E1C40000DB9A /* main.m */; };
 		8997C5DD1D51E1C40000DB9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8997C5DC1D51E1C40000DB9A /* AppDelegate.m */; };
 		8997C5E01D51E1C40000DB9A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8997C5DF1D51E1C40000DB9A /* ViewController.m */; };
@@ -602,6 +604,9 @@
 		898AB75D1D882B04001B07A9 /* JKTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKTextField.m; sourceTree = "<group>"; };
 		898BF95B1D8EB0F7009F01E4 /* YZGReturnAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZGReturnAlertView.h; sourceTree = "<group>"; };
 		898BF95C1D8EB0F7009F01E4 /* YZGReturnAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZGReturnAlertView.m; sourceTree = "<group>"; };
+		898FB1381DD164FE00C397C8 /* YZGJSController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZGJSController.h; sourceTree = "<group>"; };
+		898FB1391DD164FE00C397C8 /* YZGJSController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZGJSController.m; sourceTree = "<group>"; };
+		898FB1441DD1673500C397C8 /* my.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = my.html; sourceTree = "<group>"; };
 		8997C5D51D51E1C30000DB9A /* ggg.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ggg.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8997C5D91D51E1C40000DB9A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8997C5DB1D51E1C40000DB9A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -1890,6 +1895,40 @@
 			path = JKTextField;
 			sourceTree = "<group>";
 		};
+		898FB1361DD164FE00C397C8 /* JS_OC */ = {
+			isa = PBXGroup;
+			children = (
+				898FB1371DD164FE00C397C8 /* controllers */,
+				898FB13D1DD164FE00C397C8 /* tool */,
+				898FB1401DD164FE00C397C8 /* views */,
+			);
+			path = JS_OC;
+			sourceTree = "<group>";
+		};
+		898FB1371DD164FE00C397C8 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				898FB1381DD164FE00C397C8 /* YZGJSController.h */,
+				898FB1391DD164FE00C397C8 /* YZGJSController.m */,
+			);
+			path = controllers;
+			sourceTree = "<group>";
+		};
+		898FB13D1DD164FE00C397C8 /* tool */ = {
+			isa = PBXGroup;
+			children = (
+				898FB1441DD1673500C397C8 /* my.html */,
+			);
+			path = tool;
+			sourceTree = "<group>";
+		};
+		898FB1401DD164FE00C397C8 /* views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
 		8997C5CC1D51E1C20000DB9A = {
 			isa = PBXGroup;
 			children = (
@@ -1917,6 +1956,7 @@
 			children = (
 				8997C5DB1D51E1C40000DB9A /* AppDelegate.h */,
 				8997C5DC1D51E1C40000DB9A /* AppDelegate.m */,
+				898FB1361DD164FE00C397C8 /* JS_OC */,
 				89584A9D1DCB3A08004585E7 /* coreData */,
 				895849751DCB0409004585E7 /* FMDB */,
 				8958496B1DCAD337004585E7 /* UserTools(用户管理) */,
@@ -2081,6 +2121,7 @@
 				3D50CEDE1D8C2A7000CFF87C /* city.plist in Resources */,
 				8979C2601D7EE43B008A2D72 /* SVProgressHUD.bundle in Resources */,
 				8967BB8C1DA744190081BDA1 /* CoreSVP.bundle in Resources */,
+				898FB1451DD1673500C397C8 /* my.html in Resources */,
 				898AB72E1D87E41D001B07A9 /* IQKeyboardManager.bundle in Resources */,
 				8967BB711DA744190081BDA1 /* PhotoItemView.xib in Resources */,
 				894D8F8E1DB77B4A00AE66ED /* tableView.plist in Resources */,
@@ -2186,6 +2227,7 @@
 				8979C1FA1D7EDF66008A2D72 /* NSString+TGHXAddtions.m in Sources */,
 				8979A6A51D6D4AE700A4A4E2 /* NSObject+MJKeyValue.m in Sources */,
 				8967BB681DA744190081BDA1 /* PhotoModel.m in Sources */,
+				898FB1411DD164FE00C397C8 /* YZGJSController.m in Sources */,
 				894D8FE91DB9BA1B00AE66ED /* TZImagePickerController.m in Sources */,
 				3D50CEF01D8C2EC100CFF87C /* RegExpValidateFormat.m in Sources */,
 				898AB72B1D87E41D001B07A9 /* IQTitleBarButtonItem.m in Sources */,
