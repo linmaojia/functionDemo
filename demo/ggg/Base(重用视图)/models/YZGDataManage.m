@@ -8,6 +8,8 @@
 
 #import "YZGDataManage.h"
 #import "CoreStatus.h"
+#import <Photos/Photos.h>
+#import <AssetsLibrary/AssetsLibrary.h>
 @interface YZGDataManage ()
 {
     NSInteger _hour,_minute,_day;
@@ -15,34 +17,7 @@
 @end
 @implementation YZGDataManage
 
-#pragma mark ************** 计算文本高度
-+ (CGFloat)getLabelHeightWithText:(NSString *)text LabWidth:(CGFloat)labWidth LabFontSize:(CGFloat)labFontSize
-{
-    CGRect placehoderRect=[text boundingRectWithSize:CGSizeMake(labWidth, MAXFLOAT)  options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:labFontSize]} context:nil];
-    CGFloat height = placehoderRect.size.height;
-    
-    return height;
-    
-}
-+ (CGFloat)getLabelwidthWithText:(NSString *)text LabHeight:(CGFloat)labHeight LabFontSize:(CGFloat)labFontSize
-{
-    CGRect placehoderRect=[text boundingRectWithSize:CGSizeMake(MAXFLOAT,labHeight)  options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:labFontSize]} context:nil];
-    CGFloat width = placehoderRect.size.width;
-    
-    return width;
-    
-}
 #pragma mark ************** 时间戳转换
-- (NSString *)changeTime:(NSInteger)time{
-    NSString *strTime;
-    NSDate *newdate=[NSDate dateWithTimeIntervalSince1970:time/1000];//NSDate
-    //定义时间格式
-    NSDateFormatter *dateformatter=[NSDateFormatter new];
-    [dateformatter setDateFormat:@"MM-dd HH:mm:ss"];
-    //转为字符串
-    strTime =[dateformatter stringFromDate:newdate];
-    return strTime;
-}
 - (NSInteger)getCurrentDaySurplusSecond:(NSInteger)timestamp CountData:(NSInteger)countData
 {
     //时间戳
@@ -191,5 +166,42 @@
     }
     
 }
-
++ (BOOL)isFirstCanUsePhotos
+{
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] < 8.0) {
+        ALAuthorizationStatus author =[ALAssetsLibrary authorizationStatus];
+        if (author == ALAuthorizationStatusNotDetermined) {
+            //用户尚未做出选择这个应用程序的问候
+            return YES;
+        }
+    }
+    else {
+        PHAuthorizationStatus status = [PHPhotoLibrary authorizationStatus];
+        if (status == PHAuthorizationStatusNotDetermined) {
+            //无权限
+            return YES;
+        }
+    }
+    return NO;
+}
++ (BOOL)isCanUsePhotos
+{
+    
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] < 8.0) {
+        ALAuthorizationStatus author =[ALAssetsLibrary authorizationStatus];
+        if (author == ALAuthorizationStatusRestricted || author == ALAuthorizationStatusDenied) {
+            //无权限
+            return NO;
+        }
+    }
+    else {
+        PHAuthorizationStatus status = [PHPhotoLibrary authorizationStatus];
+        if (status == PHAuthorizationStatusRestricted ||
+            status == PHAuthorizationStatusDenied) {
+            //无权限
+            return NO;
+        }
+    }
+    return YES;
+}
 @end

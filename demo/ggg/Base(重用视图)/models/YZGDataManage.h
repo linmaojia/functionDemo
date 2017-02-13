@@ -17,13 +17,12 @@
 /* 返回时间 */
 - (NSString *)getDetailTimeWithTimestamp:(NSInteger)timestamp;
 
-
 /*判断错误类型*/
 + (EmptyViewTypes)dealEmptyViewTypeWithData:(id)response error:(NSError *)error;
 
-/*计算文本高度*/
-+ (CGFloat)getLabelHeightWithText:(NSString *)text LabWidth:(CGFloat)labWidth LabFontSize:(CGFloat)labFontSize;
+/*判断是否开启相册权限*/
++ (BOOL)isCanUsePhotos;
 
-/*计算文本宽度*/
-+ (CGFloat)getLabelwidthWithText:(NSString *)text LabHeight:(CGFloat)labHeight LabFontSize:(CGFloat)labFontSize;
+/*判断用户是否选择这个应用程序的问候相册权限*/
++ (BOOL)isFirstCanUsePhotos;
 @end

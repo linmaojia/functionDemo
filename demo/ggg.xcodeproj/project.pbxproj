@@ -204,6 +204,20 @@
 		8997C5E81D51E1C40000DB9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8997C5E61D51E1C40000DB9A /* LaunchScreen.storyboard */; };
 		8997C5F31D51E1C40000DB9A /* gggTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8997C5F21D51E1C40000DB9A /* gggTests.m */; };
 		8997C5FE1D51E1C50000DB9A /* gggUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8997C5FD1D51E1C50000DB9A /* gggUITests.m */; };
+		89AA16551E4EE0B9008777CE /* LZCustomPhotoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89AA16411E4EE0B9008777CE /* LZCustomPhotoController.m */; };
+		89AA16561E4EE0B9008777CE /* LZPhotoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 89AA16441E4EE0B9008777CE /* LZPhotoModel.m */; };
+		89AA16571E4EE0B9008777CE /* LZCustomPhotoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 89AA16471E4EE0B9008777CE /* LZCustomPhotoManager.m */; };
+		89AA16581E4EE0B9008777CE /* LZCustomPhotoCollectCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 89AA164A1E4EE0B9008777CE /* LZCustomPhotoCollectCell.m */; };
+		89AA16591E4EE0B9008777CE /* LZCustomPhotoCollectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 89AA164C1E4EE0B9008777CE /* LZCustomPhotoCollectView.m */; };
+		89AA165A1E4EE0B9008777CE /* LZCustomPhotoTitleBgView.m in Sources */ = {isa = PBXBuildFile; fileRef = 89AA164E1E4EE0B9008777CE /* LZCustomPhotoTitleBgView.m */; };
+		89AA165B1E4EE0B9008777CE /* LZCustomPhotoTitleTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 89AA16501E4EE0B9008777CE /* LZCustomPhotoTitleTableCell.m */; };
+		89AA165C1E4EE0B9008777CE /* LZCustomPhotoTitleTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 89AA16521E4EE0B9008777CE /* LZCustomPhotoTitleTableView.m */; };
+		89AA165D1E4EE0B9008777CE /* LZCustomPhotoTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 89AA16541E4EE0B9008777CE /* LZCustomPhotoTitleView.m */; };
+		89AA16611E4EF689008777CE /* clodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89AA165F1E4EF689008777CE /* clodeViewController.m */; };
+		89AA16621E4EF689008777CE /* clodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89AA16601E4EF689008777CE /* clodeViewController.xib */; };
+		89AA16641E5180D3008777CE /* YZGPicController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89AA16631E5180D3008777CE /* YZGPicController.xib */; };
+		89AA166A1E51A129008777CE /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89AA16681E51A129008777CE /* PhotoViewController.m */; };
+		89AA166F1E51A759008777CE /* CustomCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 89AA166E1E51A759008777CE /* CustomCamera.m */; };
 		89EC6ED71DBB5484001A1F2C /* YZGPictuersCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 89EC6ED61DBB5484001A1F2C /* YZGPictuersCollectionView.m */; };
 		89EFCD861D9CA21C0099325D /* YZGShoppingCarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 89EFCD851D9CA21C0099325D /* YZGShoppingCarView.m */; };
 		89EFCD891D9CA3440099325D /* YZGDataManage.m in Sources */ = {isa = PBXBuildFile; fileRef = 89EFCD881D9CA3440099325D /* YZGDataManage.m */; };
@@ -622,6 +636,32 @@
 		8997C5F91D51E1C50000DB9A /* gggUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = gggUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8997C5FD1D51E1C50000DB9A /* gggUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = gggUITests.m; sourceTree = "<group>"; };
 		8997C5FF1D51E1C50000DB9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89AA16401E4EE0B9008777CE /* LZCustomPhotoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZCustomPhotoController.h; sourceTree = "<group>"; };
+		89AA16411E4EE0B9008777CE /* LZCustomPhotoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZCustomPhotoController.m; sourceTree = "<group>"; };
+		89AA16431E4EE0B9008777CE /* LZPhotoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZPhotoModel.h; sourceTree = "<group>"; };
+		89AA16441E4EE0B9008777CE /* LZPhotoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZPhotoModel.m; sourceTree = "<group>"; };
+		89AA16461E4EE0B9008777CE /* LZCustomPhotoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZCustomPhotoManager.h; sourceTree = "<group>"; };
+		89AA16471E4EE0B9008777CE /* LZCustomPhotoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZCustomPhotoManager.m; sourceTree = "<group>"; };
+		89AA16491E4EE0B9008777CE /* LZCustomPhotoCollectCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZCustomPhotoCollectCell.h; sourceTree = "<group>"; };
+		89AA164A1E4EE0B9008777CE /* LZCustomPhotoCollectCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZCustomPhotoCollectCell.m; sourceTree = "<group>"; };
+		89AA164B1E4EE0B9008777CE /* LZCustomPhotoCollectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZCustomPhotoCollectView.h; sourceTree = "<group>"; };
+		89AA164C1E4EE0B9008777CE /* LZCustomPhotoCollectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZCustomPhotoCollectView.m; sourceTree = "<group>"; };
+		89AA164D1E4EE0B9008777CE /* LZCustomPhotoTitleBgView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZCustomPhotoTitleBgView.h; sourceTree = "<group>"; };
+		89AA164E1E4EE0B9008777CE /* LZCustomPhotoTitleBgView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZCustomPhotoTitleBgView.m; sourceTree = "<group>"; };
+		89AA164F1E4EE0B9008777CE /* LZCustomPhotoTitleTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZCustomPhotoTitleTableCell.h; sourceTree = "<group>"; };
+		89AA16501E4EE0B9008777CE /* LZCustomPhotoTitleTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZCustomPhotoTitleTableCell.m; sourceTree = "<group>"; };
+		89AA16511E4EE0B9008777CE /* LZCustomPhotoTitleTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZCustomPhotoTitleTableView.h; sourceTree = "<group>"; };
+		89AA16521E4EE0B9008777CE /* LZCustomPhotoTitleTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZCustomPhotoTitleTableView.m; sourceTree = "<group>"; };
+		89AA16531E4EE0B9008777CE /* LZCustomPhotoTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZCustomPhotoTitleView.h; sourceTree = "<group>"; };
+		89AA16541E4EE0B9008777CE /* LZCustomPhotoTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZCustomPhotoTitleView.m; sourceTree = "<group>"; };
+		89AA165E1E4EF689008777CE /* clodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = clodeViewController.h; sourceTree = "<group>"; };
+		89AA165F1E4EF689008777CE /* clodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = clodeViewController.m; sourceTree = "<group>"; };
+		89AA16601E4EF689008777CE /* clodeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = clodeViewController.xib; sourceTree = "<group>"; };
+		89AA16631E5180D3008777CE /* YZGPicController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YZGPicController.xib; sourceTree = "<group>"; };
+		89AA16671E51A129008777CE /* PhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoViewController.h; sourceTree = "<group>"; };
+		89AA16681E51A129008777CE /* PhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoViewController.m; sourceTree = "<group>"; };
+		89AA166D1E51A759008777CE /* CustomCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCamera.h; sourceTree = "<group>"; };
+		89AA166E1E51A759008777CE /* CustomCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCamera.m; sourceTree = "<group>"; };
 		89EC6ED51DBB5484001A1F2C /* YZGPictuersCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZGPictuersCollectionView.h; sourceTree = "<group>"; };
 		89EC6ED61DBB5484001A1F2C /* YZGPictuersCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZGPictuersCollectionView.m; sourceTree = "<group>"; };
 		89EFCD841D9CA21C0099325D /* YZGShoppingCarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZGShoppingCarView.h; sourceTree = "<group>"; };
@@ -783,6 +823,8 @@
 		894D8FBA1DB9B4A000AE66ED /* 相册 */ = {
 			isa = PBXGroup;
 			children = (
+				89AA16651E51A129008777CE /* 自定义拍照 */,
+				89AA163E1E4EE0B9008777CE /* 自定义相册 */,
 				894D8FBB1DB9B4A000AE66ED /* controllers */,
 				894D8FBE1DB9B4A000AE66ED /* models */,
 				894D8FC11DB9B4A000AE66ED /* tool */,
@@ -796,6 +838,7 @@
 			children = (
 				894D8FBC1DB9B4A000AE66ED /* YZGPicController.h */,
 				894D8FBD1DB9B4A000AE66ED /* YZGPicController.m */,
+				89AA16631E5180D3008777CE /* YZGPicController.xib */,
 				894D8FEF1DB9C48000AE66ED /* YZGPublishController.h */,
 				894D8FF01DB9C48000AE66ED /* YZGPublishController.m */,
 			);
@@ -2008,6 +2051,101 @@
 			path = gggUITests;
 			sourceTree = "<group>";
 		};
+		89AA163E1E4EE0B9008777CE /* 自定义相册 */ = {
+			isa = PBXGroup;
+			children = (
+				89AA163F1E4EE0B9008777CE /* controllers */,
+				89AA16421E4EE0B9008777CE /* models */,
+				89AA16451E4EE0B9008777CE /* tool */,
+				89AA16481E4EE0B9008777CE /* views */,
+			);
+			path = "自定义相册";
+			sourceTree = "<group>";
+		};
+		89AA163F1E4EE0B9008777CE /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				89AA16401E4EE0B9008777CE /* LZCustomPhotoController.h */,
+				89AA16411E4EE0B9008777CE /* LZCustomPhotoController.m */,
+				89AA165E1E4EF689008777CE /* clodeViewController.h */,
+				89AA165F1E4EF689008777CE /* clodeViewController.m */,
+				89AA16601E4EF689008777CE /* clodeViewController.xib */,
+			);
+			path = controllers;
+			sourceTree = "<group>";
+		};
+		89AA16421E4EE0B9008777CE /* models */ = {
+			isa = PBXGroup;
+			children = (
+				89AA16431E4EE0B9008777CE /* LZPhotoModel.h */,
+				89AA16441E4EE0B9008777CE /* LZPhotoModel.m */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		89AA16451E4EE0B9008777CE /* tool */ = {
+			isa = PBXGroup;
+			children = (
+				89AA16461E4EE0B9008777CE /* LZCustomPhotoManager.h */,
+				89AA16471E4EE0B9008777CE /* LZCustomPhotoManager.m */,
+			);
+			path = tool;
+			sourceTree = "<group>";
+		};
+		89AA16481E4EE0B9008777CE /* views */ = {
+			isa = PBXGroup;
+			children = (
+				89AA16491E4EE0B9008777CE /* LZCustomPhotoCollectCell.h */,
+				89AA164A1E4EE0B9008777CE /* LZCustomPhotoCollectCell.m */,
+				89AA164B1E4EE0B9008777CE /* LZCustomPhotoCollectView.h */,
+				89AA164C1E4EE0B9008777CE /* LZCustomPhotoCollectView.m */,
+				89AA164D1E4EE0B9008777CE /* LZCustomPhotoTitleBgView.h */,
+				89AA164E1E4EE0B9008777CE /* LZCustomPhotoTitleBgView.m */,
+				89AA164F1E4EE0B9008777CE /* LZCustomPhotoTitleTableCell.h */,
+				89AA16501E4EE0B9008777CE /* LZCustomPhotoTitleTableCell.m */,
+				89AA16511E4EE0B9008777CE /* LZCustomPhotoTitleTableView.h */,
+				89AA16521E4EE0B9008777CE /* LZCustomPhotoTitleTableView.m */,
+				89AA16531E4EE0B9008777CE /* LZCustomPhotoTitleView.h */,
+				89AA16541E4EE0B9008777CE /* LZCustomPhotoTitleView.m */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		89AA16651E51A129008777CE /* 自定义拍照 */ = {
+			isa = PBXGroup;
+			children = (
+				89AA166C1E51A750008777CE /* tool */,
+				89AA16661E51A129008777CE /* controller */,
+				89AA16691E51A129008777CE /* view */,
+			);
+			path = "自定义拍照";
+			sourceTree = "<group>";
+		};
+		89AA16661E51A129008777CE /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				89AA16671E51A129008777CE /* PhotoViewController.h */,
+				89AA16681E51A129008777CE /* PhotoViewController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		89AA16691E51A129008777CE /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		89AA166C1E51A750008777CE /* tool */ = {
+			isa = PBXGroup;
+			children = (
+				89AA166D1E51A759008777CE /* CustomCamera.h */,
+				89AA166E1E51A759008777CE /* CustomCamera.m */,
+			);
+			path = tool;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2121,6 +2259,8 @@
 				3D50CEDE1D8C2A7000CFF87C /* city.plist in Resources */,
 				8979C2601D7EE43B008A2D72 /* SVProgressHUD.bundle in Resources */,
 				8967BB8C1DA744190081BDA1 /* CoreSVP.bundle in Resources */,
+				89AA16621E4EF689008777CE /* clodeViewController.xib in Resources */,
+				89AA16641E5180D3008777CE /* YZGPicController.xib in Resources */,
 				898FB1451DD1673500C397C8 /* my.html in Resources */,
 				898AB72E1D87E41D001B07A9 /* IQKeyboardManager.bundle in Resources */,
 				8967BB711DA744190081BDA1 /* PhotoItemView.xib in Resources */,
@@ -2217,6 +2357,7 @@
 				895849921DCB05EE004585E7 /* FMDatabaseQueue.m in Sources */,
 				8967BC8D1DB5CAE60081BDA1 /* UIView+HYBUIViewCommon.m in Sources */,
 				8979C23A1D7EE273008A2D72 /* MJRefreshBackStateFooter.m in Sources */,
+				89AA16561E4EE0B9008777CE /* LZPhotoModel.m in Sources */,
 				8979A6E51D6D6E5B00A4A4E2 /* UIImageView+HighlightedWebCache.m in Sources */,
 				8949A1B31D8D3ED80064B16D /* YZGremarkView.m in Sources */,
 				898AB7211D87E41D001B07A9 /* IQUIScrollView+Additions.m in Sources */,
@@ -2242,6 +2383,9 @@
 				8967BB8A1DA744190081BDA1 /* UIButton+SD.m in Sources */,
 				8979C2811D7EEBE2008A2D72 /* Reachability.m in Sources */,
 				8979C1F71D7EDF66008A2D72 /* NSString+Extend.m in Sources */,
+				89AA16581E4EE0B9008777CE /* LZCustomPhotoCollectCell.m in Sources */,
+				89AA16571E4EE0B9008777CE /* LZCustomPhotoManager.m in Sources */,
+				89AA165B1E4EE0B9008777CE /* LZCustomPhotoTitleTableCell.m in Sources */,
 				89EFCD931D9CB3BD0099325D /* YZGOrderButtonView.m in Sources */,
 				8967BB6B1DA744190081BDA1 /* PBBlurImageView.m in Sources */,
 				8979C2391D7EE273008A2D72 /* MJRefreshBackNormalFooter.m in Sources */,
@@ -2257,6 +2401,7 @@
 				894D8FB71DB8A77500AE66ED /* SDBrowserImageView.m in Sources */,
 				8979C2611D7EE43B008A2D72 /* SVProgressHUD.m in Sources */,
 				898AB7201D87E41D001B07A9 /* IQNSArray+Sort.m in Sources */,
+				89AA166A1E51A129008777CE /* PhotoViewController.m in Sources */,
 				898AB7291D87E41D001B07A9 /* IQBarButtonItem.m in Sources */,
 				8967BB741DA744190081BDA1 /* NSString+File.m in Sources */,
 				8958498F1DCB05EE004585E7 /* FMDatabase.m in Sources */,
@@ -2265,12 +2410,15 @@
 				8967BB8D1DA744190081BDA1 /* CoreSVP.m in Sources */,
 				8979C26D1D7EE81E008A2D72 /* UIView+Empty.m in Sources */,
 				894D8FCC1DB9B6C200AE66ED /* CustomAlertView.m in Sources */,
+				89AA165A1E4EE0B9008777CE /* LZCustomPhotoTitleBgView.m in Sources */,
 				898AB72D1D87E41D001B07A9 /* IQUIView+IQKeyboardToolbar.m in Sources */,
 				3D7A0F991D940EBC00C6E04B /* JVFloatLabeledTextView.m in Sources */,
 				89584AB41DCB3B11004585E7 /* Users+CoreDataProperties.m in Sources */,
 				8979C1FB1D7EDF66008A2D72 /* UIColor+Extend.m in Sources */,
 				8979C2351D7EE273008A2D72 /* MJRefreshAutoGifFooter.m in Sources */,
+				89AA165C1E4EE0B9008777CE /* LZCustomPhotoTitleTableView.m in Sources */,
 				89EC6ED71DBB5484001A1F2C /* YZGPictuersCollectionView.m in Sources */,
+				89AA165D1E4EE0B9008777CE /* LZCustomPhotoTitleView.m in Sources */,
 				894D8FE41DB9BA1B00AE66ED /* NSBundle+TZImagePicker.m in Sources */,
 				8979A6A01D6D4AE700A4A4E2 /* MJProperty.m in Sources */,
 				8979C25E1D7EE43B008A2D72 /* SVIndefiniteAnimatedView.m in Sources */,
@@ -2291,6 +2439,7 @@
 				3D7A0F9A1D940EBC00C6E04B /* NSString+TextDirectionality.m in Sources */,
 				8967BB821DA744190081BDA1 /* UIImage+Extend.m in Sources */,
 				8967BB801DA744190081BDA1 /* UIImage+Color.m in Sources */,
+				89AA16551E4EE0B9008777CE /* LZCustomPhotoController.m in Sources */,
 				8967BB871DA744190081BDA1 /* UIWindow+Launch.m in Sources */,
 				898AB72A1D87E41D001B07A9 /* IQPreviousNextView.m in Sources */,
 				894D8FED1DB9BA1B00AE66ED /* TZVideoPlayerController.m in Sources */,
@@ -2309,6 +2458,7 @@
 				8967BB7F1DA744190081BDA1 /* UIFont+Extend.m in Sources */,
 				89584B011DCC1E74004585E7 /* CoreDataManager.m in Sources */,
 				8967BB7E1DA744190081BDA1 /* UIDevice+Extend.m in Sources */,
+				89AA16591E4EE0B9008777CE /* LZCustomPhotoCollectView.m in Sources */,
 				8979C2341D7EE273008A2D72 /* MJRefreshHeader.m in Sources */,
 				8979A6A31D6D4AE700A4A4E2 /* NSObject+MJClass.m in Sources */,
 				89584AFE1DCC187A004585E7 /* YZGCoreTableView.m in Sources */,
@@ -2332,6 +2482,7 @@
 				8958495C1DCAC9A4004585E7 /* YZGDataController.m in Sources */,
 				895849801DCB0409004585E7 /* YZGFMDBController.m in Sources */,
 				8979A6E41D6D6E5B00A4A4E2 /* UIImage+WebP.m in Sources */,
+				89AA16611E4EF689008777CE /* clodeViewController.m in Sources */,
 				895849741DCAD997004585E7 /* YZGPhoneTableView.m in Sources */,
 				8979C1F81D7EDF66008A2D72 /* NSString+Password.m in Sources */,
 				8979A6D91D6D6E5B00A4A4E2 /* NSData+ImageContentType.m in Sources */,
@@ -2351,6 +2502,7 @@
 				8967BB841DA744190081BDA1 /* UIImage+Water.m in Sources */,
 				8979C25F1D7EE43B008A2D72 /* SVProgressAnimatedView.m in Sources */,
 				8979A6DA1D6D6E5B00A4A4E2 /* SDImageCache.m in Sources */,
+				89AA166F1E51A759008777CE /* CustomCamera.m in Sources */,
 				89584AA81DCB3A08004585E7 /* YZGCoreController.m in Sources */,
 				898AB72C1D87E41D001B07A9 /* IQToolbar.m in Sources */,
 				8979A6DD1D6D6E5B00A4A4E2 /* SDWebImageDownloader.m in Sources */,

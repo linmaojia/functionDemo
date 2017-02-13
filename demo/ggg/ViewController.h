@@ -6,9 +6,9 @@
 //  Copyright © 2016年 AVGD. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+#import "YZGRootViewController.h"
+@interface ViewController : YZGRootViewController
 
 
 @end

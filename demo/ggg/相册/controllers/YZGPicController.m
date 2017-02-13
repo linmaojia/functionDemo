@@ -10,9 +10,17 @@
 #import "YZGPicManager.h"
 #import "CustomAlertView.h"
 #import "TZImagePickerController.h"
- #import "YZGPublishController.h"
+#import "YZGPublishController.h"
 #import "YZGRootNavigationController.h"
+#import "LZCustomPhotoController.h"
+#import "clodeViewController.h"
+#import <Photos/Photos.h>
+#import <AssetsLibrary/AssetsLibrary.h>
+#import "PhotoViewController.h"
 @interface YZGPicController ()<TZImagePickerControllerDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+{
+   NSTimer *_timer;
+}
 @property (nonatomic, strong) YZGPicManager *manager;
 @property (nonatomic, strong) UIImageView *titleImg;         /**<  图片 */
 
@@ -85,7 +93,7 @@
 -(void)titleImgClick:(UITapGestureRecognizer *)sender
 {
     ESWeakSelf;
-    [CustomAlertView showAlertViewWithTitleArray:@[@"原始拍照",@"原始相册",@"第三方相册选择"] TitleBtnBlock:^(NSString *title) {
+    [CustomAlertView showAlertViewWithTitleArray:@[@"原始拍照",@"原始相册",@"第三方相册选择",@"自定义相册",@"自定义拍照"] TitleBtnBlock:^(NSString *title) {
         if([title isEqualToString:@"原始拍照"])
         {
             NSLog(@"拍照");
@@ -101,8 +109,90 @@
             NSLog(@"从手机相册选择");
             [self openPhotoAlbum];
         }
+        else if([title isEqualToString:@"自定义相册"])
+        {
+            NSLog(@"自定义相册");
+            [self customPicture];
+        }
+        else if([title isEqualToString:@"自定义拍照"])
+        {
+            NSLog(@"自定义拍照");
+            [self customPhoto];
+        }
+        
     }];
 }
+- (void)customPhoto
+{
+    ESWeakSelf;
+    PhotoViewController *vc = [PhotoViewController new];
+    vc.selectImgBlock = ^(UIImage *image){
+        __weakSelf.titleImg.image = image;
+    };
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+
+
+
+
+
+/// Return YES if Authorized 返回YES如果得到了授权
+- (BOOL)authorizationStatusAuthorized {
+    return [self authorizationStatus] == 3;
+}
+
+- (NSInteger)authorizationStatus {
+    if (iOS8Later) {
+        return [PHPhotoLibrary authorizationStatus];
+    } else {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
+        return [ALAssetsLibrary authorizationStatus];
+#pragma clang diagnostic pop
+    }
+    return NO;
+}
+//推到自定义相册页面
+- (void)pushPhotoPickerVc
+{
+    ESWeakSelf;
+    LZCustomPhotoController *vc = [LZCustomPhotoController new];
+    vc.selectImgBlock = ^(UIImage *image){
+        __weakSelf.titleImg.image = image;
+    };
+    [self.navigationController pushViewController:vc animated:YES];
+}
+- (void)observeAuthrizationStatusChange {
+    //已授权
+    if ([self authorizationStatusAuthorized])
+    {
+        [_timer invalidate];
+        _timer = nil;
+        [self pushPhotoPickerVc];
+    }
+    else
+    {
+        [_timer invalidate];
+        _timer = nil;
+         [self.navigationController pushViewController:[clodeViewController new] animated:YES];
+    }
+    
+}
+
+- (void)customPicture
+{
+    if([YZGDataManage isFirstCanUsePhotos])//第一次访问相册
+    {
+        if (iOS8Later) {
+            PHCachingImageManager *manager = [[PHCachingImageManager alloc] init];
+        }
+    }
+    //定时器 0.2秒执行一次
+    _timer = [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(observeAuthrizationStatusChange) userInfo:nil repeats:YES];
+
+}
+
 - (void)creatPhotoPickerViewWithIndex:(NSInteger)index {
     
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
@@ -111,7 +201,7 @@
         imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
         
     }
-    else             // 调用系统相机
+    else             // 调用系统相册
     {
         imagePicker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
     }
